@@ -1,0 +1,205 @@
+<div class="bg-container h-full w-full flex justify-center px-[60px] pb-[52px]">
+  <ng-container *ngIf="counter === 0">
+    <div class="flex flex-col justify-end">
+      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <dialogue
+        class=""
+        [title]="'爸爸'"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>
+          接下來我們就開始進行Scrum脫單討論會吧，這個會議也就是短衝規劃會議
+          (Sprint planning)
+          ，短衝代表著一個迭代，每一次的短衝具有時間限制，會在會議中規劃每一次要做什麼事、花費的時間以及每一個項目的優先順序，會議結束後大家就知道下一步要做什麼了！
+        </p>
+      </dialogue>
+    </div></ng-container
+  >
+
+  <ng-container *ngIf="counter > 0 && counter < 3">
+    <div class="flex flex-col justify-end fade-in relative">
+      <img class="w-[520px] mx-auto" src="assets/mom.png" alt="媽媽" />
+      <dialogue
+        class=""
+        [title]="'媽媽'"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>我列了幾項脫單必做事項，給你們看看～</p>
+      </dialogue>
+
+      <ng-container *ngIf="counter === 2">
+        <div class="memo absolute top-20 left-52">提升外在</div>
+        <div class="memo absolute top-20 right-52">拓展交際圈</div>
+        <div class="memo absolute bottom-72 left-0">提升內涵</div>
+        <div class="memo absolute bottom-72 right-0">讓口袋變深</div>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 3">
+    <div class="flex flex-col items-center justify-end">
+      <div class="flex-1 flex items-center gap-20">
+        <div class="memo">提升外在</div>
+        <div class="memo">提升內涵</div>
+        <div class="memo">拓展交際圈</div>
+        <div class="memo">讓口袋變深</div>
+      </div>
+      <dialogue
+        [title]="'旁白'"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>於是他們開始思考該怎麼達到這些要求......</p>
+      </dialogue>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 4">
+    <div class="h-full w-full flex flex-col items-center justify-end">
+      <div class="flex">
+        <img src="assets/mom.png" alt="媽媽" class="opacity-70" />
+        <img src="assets/dad.png" alt="爸爸" class="opacity-70 -mx-40 z-10" />
+        <img src="assets/friend.png" alt="朋友" class="opacity-70 z-20" />
+      </div>
+      <dialogue
+        class=""
+        [title]="'旁白 '"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>約2個小時後......</p>
+      </dialogue>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 5">
+    <dialogue
+      class="mt-auto"
+      [title]="'旁白'"
+      [showBtn]="true"
+      (continue)="counter = counter + 1"
+    >
+      <p>終於討論出來啦！</p>
+    </dialogue></ng-container
+  >
+
+  <ng-container *ngIf="counter === 6">
+    <div class="mt-auto flex-1 flex flex-col items-center gap-2">
+      <div
+        class="bg-paper-line py-12 px-[88px] flex flex-col items-center gap-28"
+      >
+        <p class="text-[#3A3A3A] font-bold text-[28px]">脫單必做清單</p>
+        <div class="flex gap-10">
+          <div class="flex flex-col gap-14">
+            <div class="memo">提升外在</div>
+            <ul class="flex flex-col gap-1 text-xl">
+              <li>1. 換髮型</li>
+              <li>2. 學化妝</li>
+              <li>3. 買新衣服</li>
+              <li>4. 運動、健身</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-14">
+            <div class="memo">提升內涵</div>
+            <ul class="flex flex-col gap-1 text-xl">
+              <li>1. 多閱讀</li>
+              <li>2. 練習溝通技巧</li>
+              <li>3. 培養興趣</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-14">
+            <div class="memo">拓展交際圈</div>
+            <ul class="flex flex-col gap-1 text-xl">
+              <li>1. 參加聯誼</li>
+              <li>2. 多參與聚會</li>
+              <li>3. 嘗試使用交友軟體</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-14">
+            <div class="memo">讓口袋變深</div>
+            <ul class="flex flex-col gap-1 text-xl">
+              <li>1. 經營電商</li>
+              <li>2. 賣二手用品</li>
+              <li>3. 投資理財</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="btn btn--primary text-2xl self-end mr-10"
+        (click)="counter = counter + 1"
+      >
+        下一步
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 7">
+    <div class="flex flex-col justify-end">
+      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <dialogue
+        class=""
+        [title]="'爸爸'"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>
+          這個清單就是產品待辦清單 (Product
+          backlog)，裡面包含目標，在Scrum稱為故事
+          (Story)，以及該如何執行這個目標的細節，也就是執行任務 (Task)。
+        </p>
+      </dialogue>
+    </div></ng-container
+  >
+
+  <ng-container *ngIf="counter === 8">
+    <div class="flex flex-col justify-end">
+      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <dialogue
+        class=""
+        [title]="'爸爸'"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>
+          列出清單之後，就知道接下來可以做什麼事了，平常我都是用Jira來管理的，我很推薦這個軟體。因為要脫單不是一件容易的事，所以要一步一步來，為了不浪費機會與時間，每一次作戰都要好好把握，先來制定第一次作戰計畫吧！
+        </p>
+      </dialogue>
+    </div></ng-container
+  >
+
+  <ng-container *ngIf="counter === 9">
+    <div class="flex flex-col justify-end">
+      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <dialogue
+        class=""
+        [title]="'爸爸'"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>
+          時間有限，每一次作戰大約會花到2周的時間，換算成點數的話大約是20點，點數
+          (Sprint point) 就是為了衡量速度，用大約會花費的時間換算出來的。
+        </p>
+      </dialogue>
+    </div></ng-container
+  >
+
+  <ng-container *ngIf="counter === 10">
+    <div
+      class="w-[980px] h-[370px] custom-card z-30 px-[110px] py-[80px] text-[28px] font-bold leading-normal flex flex-col gap-10 place-self-center justify-between items-center"
+    >
+      <p>那麼接下來可以幫少女安排第一次作戰計畫嗎？</p>
+
+      <button
+        class="btn btn--primary text-4xl mx-auto"
+        (click)="counter = counter + 1"
+      >
+        好的
+      </button>
+    </div>
+  </ng-container>
+</div>

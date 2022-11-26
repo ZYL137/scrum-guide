@@ -7,9 +7,10 @@ import { routes } from './app.routing';
 import { CoverComponent } from './cover/cover.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { DialogueComponent } from './components/dialogue/dialogue.component';
+import { SprintComponent } from './sprint/sprint.component';
 
 @NgModule({
-  declarations: [AppComponent, CoverComponent, IntroductionComponent, DialogueComponent],
+  declarations: [AppComponent, CoverComponent, IntroductionComponent, DialogueComponent, SprintComponent],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],

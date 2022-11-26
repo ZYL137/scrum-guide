@@ -35,6 +35,36 @@
   }
 }
 
-.btn-delay {
-  animation-delay: 5s;
+.character-btn-delay {
+  animation-delay: 4.5s;
+}
+
+.team-card {
+  width: 320px;
+  height: 418px;
+  padding: 68px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &-2 {
+    animation-delay: 1.5s;
+  }
+  &-3 {
+    animation-delay: 2.5s;
+  }
+}
+
+.team-btn-delay {
+  animation-delay: 3.5s;
+}
+
+.level-1-box {
+  width: 1160px;
+  height: 720px;
+
+  background-image: url("/assets/bg-paper.png");
+  // background-attachment: fixed;
+  background-size: cover;
 }

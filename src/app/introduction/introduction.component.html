@@ -76,6 +76,7 @@
     </dialogue></ng-container
   >
 
+  <!-- 人物介紹 -->
   <ng-container *ngIf="counter === 4">
     <div class="flex-1 flex flex-col">
       <p class="scene-title">人物介紹</p>
@@ -118,11 +119,170 @@
         </div>
       </div>
       <button
-        class="btn btn--primary text-[32px] ml-auto fade-in btn-delay"
+        class="btn btn--primary text-[32px] ml-auto fade-in character-btn-delay"
         (click)="counter = counter + 1"
       >
         下一步
       </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 5">
+    <dialogue
+      class="mt-auto"
+      [title]="'旁白'"
+      [showBtn]="true"
+      (continue)="counter = counter + 1"
+    >
+      <p>接下來就來說明Scrum的團隊組成吧！</p>
+    </dialogue></ng-container
+  >
+
+  <!-- 團隊介紹 -->
+  <ng-container *ngIf="counter === 6">
+    <div class="flex-1 flex flex-col">
+      <p class="scene-title">Scrum 團隊組成</p>
+      <div class="flex-1 flex items-center justify-evenly">
+        <div class="custom-card team-card team-card-1 fade-in">
+          <img
+            class="w-[100px] h-[100px]"
+            src="assets/icon-po-yellow.svg"
+            alt="產品負責人"
+          />
+          <p class="font-medium text-[22px] text-center">
+            產品負責人<br />(Product Owner)
+          </p>
+          <p class="text-base">
+            決定產品的最終方向，是整個團隊的總召，負責將產品的價值發揮到最大
+          </p>
+        </div>
+        <div class="custom-card team-card team-card-2 fade-in">
+          <img
+            class="w-[100px] h-[100px]"
+            src="assets/icon-sm-yellow.svg"
+            alt="Scrum大師"
+          />
+          <p class="font-medium text-[22px] text-center">
+            Scrum 大師
+            <br />(Scrum Master)
+          </p>
+          <p class="text-base">
+            幫助成員了解Scrum的理論與操作，讓Scrum的能順利運行，發揮Scrum的最大價值
+          </p>
+        </div>
+        <div class="custom-card team-card team-card-3 fade-in">
+          <img
+            class="w-[100px] h-[100px]"
+            src="assets/icon-team-yellow.svg"
+            alt="開發團隊"
+          />
+          <p class="font-medium text-[22px] text-center">
+            開發團隊
+            <br />(Developers)
+          </p>
+          <p class="text-base">負責執行Scrum的任務，讓計畫能順利執行</p>
+        </div>
+      </div>
+      <button
+        class="btn btn--primary text-[32px] ml-auto fade-in team-btn-delay"
+        (click)="counter = counter + 1"
+      >
+        下一步
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 7 && !enterLevelOne">
+    <div
+      class="w-[980px] h-[405px] custom-card z-30 px-[110px] py-[80px] text-[28px] font-bold leading-normal flex flex-col gap-[100px] place-self-center"
+    >
+      <p>現在都了解Scrum的角色之後，接下來可以請你幫我分配每個人的職務嗎？</p>
+
+      <button
+        class="btn btn--primary text-4xl mx-auto"
+        (click)="startLevelOne()"
+      >
+        好的
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 8">
+    <div class="flex-1 h-full">
+      <p class="scene-title">關卡 1 - 職務分配</p>
+      <div class="mx-auto flex flex-col level-1-box translate-y-32 pt-7 pb-10">
+        <div class="grid grid-cols-3">
+          <p
+            class="col-start-2 text-center text-[#575757] font-medium text-[22px]"
+          >
+            請幫我把人物連接到相對應的職務
+          </p>
+          <button
+            class="py-2 px-4 rounded-[100px] bg-white justify-self-center shadow-custom"
+          >
+            Scrum Team 介紹
+          </button>
+        </div>
+        <div class="flex-1 flex mx-36 mt-12 justify-between">
+          <div class="flex flex-col basis-32 justify-between">
+            <img
+              class="w-full hover:cursor-pointer rounded-[50%]"
+              src="assets/dad.png"
+              alt="爸爸"
+              (click)="getSelectedCharacter($event, 'dad')"
+            />
+            <img
+              class="w-full hover:cursor-pointer rounded-[50%]"
+              src="assets/mom.png"
+              alt="媽媽"
+              (click)="getSelectedCharacter($event, 'mom')"
+            />
+            <img
+              class="w-full hover:cursor-pointer rounded-[50%]"
+              src="assets/friend.png"
+              alt="朋友"
+              (click)="getSelectedCharacter($event, 'friend')"
+            />
+          </div>
+          <div class="flex flex-col basis-32 justify-between">
+            <div
+              class="flex flex-col logo-wrapper items-center"
+              (click)="getSelectedTeamRole($event, 'po')"
+            >
+              <img
+                class="w-[80px] h-[80px]"
+                src="assets/icon-po-gray.svg"
+                alt="開發團隊"
+              />
+              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                開發團隊
+                <br />(Developers)
+              </p>
+            </div>
+            <div
+              class="flex flex-col logo-wrapper items-center"
+              (click)="getSelectedTeamRole($event, 'sm')"
+            >
+              <img
+                class="w-[80px] h-[80px]"
+                src="assets/icon-sm-gray.svg"
+                alt="開發團隊"
+              />
+              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                開發團隊
+                <br />(Developers)
+              </p>
+            </div>
+            <img
+              class="w-full"
+              src="assets/friend.png"
+              alt="朋友"
+              (click)="getSelectedTeamRole($event, 'team')"
+            />
+          </div>
+        </div>
+        <!-- <canvas #canvas> </canvas> -->
+      </div>
     </div>
   </ng-container>
 </div>
