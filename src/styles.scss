@@ -8,7 +8,7 @@ body {
   width: 100vw;
   overflow: hidden;
   background-color: #000;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .btn {
@@ -25,9 +25,56 @@ body {
   color: #3a3a3a;
   background: #ffd1d1;
   font-weight: 700;
-  font-size: 34px;
+
   transition: background 200ms;
   &:hover {
     background: #ffc7c7;
+  }
+}
+
+.scene-title {
+  padding: 10px 45px 10px 40px;
+  background: #fff1f1;
+  border-radius: 0px 100px 100px 0px;
+  color: #000;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  text-align: center;
+  position: absolute;
+  top: 32px;
+  left: 0;
+}
+
+.custom-card {
+  @apply shadow-custom bg-white-0.8 rounded-card;
+}
+
+.typing-text {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: type 3s steps(60, end) forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

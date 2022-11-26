@@ -1,1 +1,128 @@
-<p>introduction works!</p>
+<div class="bg-container h-full w-full flex justify-center px-[60px] pb-[52px]">
+  <ng-container *ngIf="counter === 0">
+    <div
+      class="w-[980px] h-[510px] custom-card z-30 px-[110px] py-[80px] text-[28px] font-bold leading-normal flex flex-col gap-10 place-self-center"
+    >
+      <p>
+        少年/少女，你渴望愛情嗎？利用Scrum也能幫你追到另一半哦，想知道Scrum可以做到什麼嗎？<br />
+      </p>
+      <p class="mb-5">
+        那就來吧！Scrum的一切都在這裡，想得到Scrum的力量，就來挑戰！
+      </p>
+
+      <button
+        class="btn btn--primary text-4xl mx-auto"
+        (click)="counter = counter + 1"
+      >
+        接受挑戰
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter > 0 && counter < 3">
+    <div class="flex flex-col justify-between">
+      <div class="mt-[160px] text-white text-xl flex flex-col gap-10">
+        <div class="flex flex-col gap-5">
+          <p class="typing-text mb-5 line-1">
+            少女是個很沒有自信的女孩，繼上一段感情結束後，就一直封閉自己，不願踏出家門，少女的父母看了很心疼，希望少女可以重拾自信，於是找了少女的朋友，想實施一個計畫......
+          </p>
+
+          <p class="typing-text mb-10 line-2">這個計畫就是.....</p>
+          <p class="font-bold text-6xl text-center line-3 fade-in">
+            Scrum 脫離單身大作戰！！
+          </p>
+        </div>
+      </div>
+      <ng-container *ngIf="counter === 1">
+        <dialogue
+          [title]="'旁白'"
+          [showBtn]="true"
+          (continue)="counter = counter + 1"
+          class="fade-in dialogue-1"
+        >
+          <p>
+            Scrum
+            是一個輕量化的框架，透過提供針對錯綜複雜問題的調適性解決方案，來幫助人們、團隊與組織產生價值。
+          </p>
+        </dialogue></ng-container
+      >
+      <ng-container *ngIf="counter === 2">
+        <dialogue [title]="'旁白'">
+          <div class="w-full h-full flex flex-col">
+            <p class="mb-8">
+              這個脫單大作戰需要你的協助，準備好要幫助少女脫離單身了嗎？
+            </p>
+            <p>準備好了就開始吧！</p>
+            <button
+              class="btn btn--primary text-2xl ml-auto -mr-5"
+              (click)="counter = counter + 1"
+            >
+              開始遊戲
+            </button>
+          </div>
+        </dialogue></ng-container
+      >
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="counter === 3">
+    <dialogue
+      class="mt-auto"
+      [title]="'旁白'"
+      [showBtn]="true"
+      (continue)="counter = counter + 1"
+    >
+      <p>先跟你介紹一下這個故事的角色！</p>
+    </dialogue></ng-container
+  >
+
+  <ng-container *ngIf="counter === 4">
+    <div class="flex-1 flex flex-col">
+      <p class="scene-title">人物介紹</p>
+      <div class="flex-1 flex items-center justify-evenly">
+        <div class="custom-card character-card character-card-1 fade-in">
+          <div class="rounded-[50%] w-[180px] h-[180px] overflow-hidden">
+            <img src="assets/mom.png" alt="媽媽" />
+          </div>
+          <p class="font-medium text-[22px]">媽媽</p>
+          <p class="text-base">
+            少女的媽媽，因為很擔心女兒，希望女兒能走出失戀的傷痛，想利用Scrum制定脫單計畫，幫助女兒脱單，在脫單大作戰中負責思考決策、制定計畫
+          </p>
+        </div>
+        <div class="custom-card character-card character-card-2 fade-in">
+          <div class="rounded-[50%] w-[180px] h-[180px] overflow-hidden">
+            <img src="assets/dad.png" alt="爸爸" />
+          </div>
+          <p class="font-medium text-[22px]">爸爸</p>
+          <p class="text-base">
+            少女的爸爸，曾經使用Scrum成功幫助少女的姊姊脫離單身，在脫單大作戰負責作戰的流程，讓一切都能順利進行
+          </p>
+        </div>
+        <div class="custom-card character-card character-card-3 fade-in">
+          <div class="rounded-[50%] w-[180px] h-[180px] overflow-hidden">
+            <img src="assets/friend.png" alt="朋友" />
+          </div>
+          <p class="font-medium text-[22px]">朋友</p>
+          <p class="text-base">
+            少女的朋友，也很擔心少女，在脫單大作戰中負責執行任務，幫助少女成功脫單
+          </p>
+        </div>
+        <div class="custom-card character-card character-card-4 fade-in">
+          <div class="rounded-[50%] w-[180px] h-[180px] overflow-hidden">
+            <img src="assets/girl.png" alt="少女" />
+          </div>
+          <p class="font-medium text-[22px]">少女</p>
+          <p class="text-base">
+            少女本人，剛失戀，希望能透過Scrum 脫單大作戰走出失戀的傷痛
+          </p>
+        </div>
+      </div>
+      <button
+        class="btn btn--primary text-[32px] ml-auto fade-in btn-delay"
+        (click)="counter = counter + 1"
+      >
+        下一步
+      </button>
+    </div>
+  </ng-container>
+</div>

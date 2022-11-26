@@ -1,0 +1,31 @@
+<div class="relative">
+  <p class="dialogue-title">{{ title }}</p>
+
+  <div class="dialogue-box">
+    <ng-content></ng-content>
+
+    <ng-container *ngIf="showBtn">
+      <button
+        class="flex items-center gap-1 font-medium text-base text-gray-dark translate-x-[99%]"
+        (click)="onOontinue()"
+      >
+        <span>點擊繼續</span
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-4 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+          />
+        </svg></button
+    ></ng-container>
+    <div class="dot dot-left absolute top-0 left-0"></div>
+    <div class="dot dot-right absolute top-0 right-0"></div>
+  </div>
+</div>
