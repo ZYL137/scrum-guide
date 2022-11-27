@@ -1,0 +1,24 @@
+<ng-container *ngIf="data.type === 'correct'"
+  ><div class="dialog dialog--primary">
+    <div class="flex flex-col gap-5 items-center">
+      <img src="assets/icon-heart.png" alt="愛心" class="w-20" />
+      <p class="text-[32px] font-bold text-black">恭喜答對囉！</p>
+    </div>
+
+    <button mat-dialog-close class="btn btn--primary text-[30px]">
+      下一步
+    </button>
+  </div></ng-container
+>
+<ng-container *ngIf="data.type === 'wrong'">
+  <div class="dialog dialog--yellow">
+    <div class="flex flex-col gap-5 items-center">
+      <img src="assets/icon-heart-break.png" alt="愛心" class="w-20" />
+      <p class="text-[32px] font-bold text-black">答錯了耶...</p>
+    </div>
+
+    <button mat-dialog-close class="btn btn--yellow text-[30px]">
+      再試一次
+    </button>
+  </div>
+</ng-container>

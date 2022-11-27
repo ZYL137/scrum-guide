@@ -225,43 +225,72 @@
         </div>
         <div class="flex-1 flex mx-36 mt-12 justify-between">
           <div class="flex flex-col basis-32 justify-between">
-            <img
-              class="w-full hover:cursor-pointer rounded-[50%]"
-              src="assets/dad.png"
-              alt="爸爸"
-              (click)="getSelectedCharacter($event, 'dad')"
-            />
-            <img
-              class="w-full hover:cursor-pointer rounded-[50%]"
-              src="assets/mom.png"
-              alt="媽媽"
-              (click)="getSelectedCharacter($event, 'mom')"
-            />
-            <img
-              class="w-full hover:cursor-pointer rounded-[50%]"
-              src="assets/friend.png"
-              alt="朋友"
-              (click)="getSelectedCharacter($event, 'friend')"
-            />
-          </div>
-          <div class="flex flex-col basis-32 justify-between">
             <div
-              class="flex flex-col logo-wrapper items-center"
+              class="flex flex-col gap-3 items-center hover:cursor-pointer"
+              (click)="getSelectedCharacter($event, 'dad')"
+            >
+              <img class="h-30 rounded-[50%]" src="assets/dad.png" alt="爸爸" />
+              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                爸爸
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-3 items-center hover:cursor-pointer"
+              (click)="getSelectedCharacter($event, 'mom')"
+            >
+              <img class="h-30 rounded-[50%]" src="assets/mom.png" alt="媽媽" />
+              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                媽媽
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 items-center hover:cursor-pointer"
+              (click)="getSelectedCharacter($event, 'friend')"
+            >
+              <img
+                class="h-[120px] rounded-[50%]"
+                src="assets/friend.png"
+                alt="朋友"
+              />
+              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                朋友
+              </p>
+            </div>
+          </div>
+          <canvas #canvas class="flex-1"></canvas>
+          <div class="flex flex-col basis-44 justify-between">
+            <div
+              class="flex flex-col gap-3 items-center hover:cursor-pointer"
               (click)="getSelectedTeamRole($event, 'po')"
             >
               <img
                 class="w-[80px] h-[80px]"
                 src="assets/icon-po-gray.svg"
-                alt="開發團隊"
+                alt="產品負責人"
               />
               <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
-                開發團隊
-                <br />(Developers)
+                產品負責人
+                <br />(Product Owner)
               </p>
             </div>
             <div
-              class="flex flex-col logo-wrapper items-center"
+              class="flex flex-col gap-3 items-center hover:cursor-pointer"
               (click)="getSelectedTeamRole($event, 'sm')"
+            >
+              <img
+                class="w-[80px] h-[80px]"
+                src="assets/icon-sm-gray.svg"
+                alt="Scrum 大師"
+              />
+              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                Scrum 大師
+                <br />(Scrum Master)
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-3 items-center hover:cursor-pointer"
+              (click)="getSelectedTeamRole($event, 'team')"
             >
               <img
                 class="w-[80px] h-[80px]"
@@ -270,18 +299,12 @@
               />
               <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
                 開發團隊
-                <br />(Developers)
+                <br />
+                (Developer)
               </p>
             </div>
-            <img
-              class="w-full"
-              src="assets/friend.png"
-              alt="朋友"
-              (click)="getSelectedTeamRole($event, 'team')"
-            />
           </div>
         </div>
-        <!-- <canvas #canvas> </canvas> -->
       </div>
     </div>
   </ng-container>

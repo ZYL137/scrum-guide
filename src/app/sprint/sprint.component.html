@@ -88,7 +88,7 @@
   <ng-container *ngIf="counter === 6">
     <div class="mt-auto flex-1 flex flex-col items-center gap-2">
       <div
-        class="bg-paper-line py-12 px-[88px] flex flex-col items-center gap-28"
+        class="bg-paper-line w-[1090px] h-[700px] py-12 px-[88px] flex flex-col items-center gap-28"
       >
         <p class="text-[#3A3A3A] font-bold text-[28px]">脫單必做清單</p>
         <div class="flex gap-10">
@@ -202,4 +202,130 @@
       </button>
     </div>
   </ng-container>
+
+  <ng-container *ngIf="counter === 11"
+    ><div class="flex-1 flex flex-col">
+      <p class="scene-title">人物介紹</p>
+      <a
+        href="https://www.atlassian.com/software/jira"
+        target="_blank"
+        class="w-[124px] h-14 p-3 bg-white opacity-80 rounded-[100px] ml-auto mt-10"
+      >
+        <img src="assets/icon-jira.png" alt="Jira logo" class="w-full" />
+      </a>
+      <p class="text-white font-medium text-[22px] text-center -mt-8 mb-6">
+        請把第一次作戰要做的事項從清單上撕下給少女，記住！因為時間有限，第一次只能完成約20點的事項
+      </p>
+      <div class="flex-1 flex items-center justify-evenly" cdkDropListGroup>
+        <div class="bg-paper-line w-[400px] h-[700px] flex flex-col">
+          <p class="text-gray-dark font-bold text-[28px] py-12 text-center">
+            脫單必做清單
+          </p>
+          <div
+            class="relative flex-1"
+            cdkDropList
+            cdkDropListSortingDisabled
+            [cdkDropListData]="todo"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <ng-container *ngFor="let item of todo; index as i">
+              <div
+                cdkDrag
+                *ngIf="i === 0"
+                class="memo-sm absolute top-8 left-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+              <div
+                cdkDrag
+                *ngIf="i === 1"
+                class="memo-sm absolute top-24 right-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+              <div
+                cdkDrag
+                *ngIf="i === 2"
+                class="memo-sm absolute bottom-48 left-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+              <div
+                cdkDrag
+                *ngIf="i === 3"
+                class="memo-sm absolute bottom-24 right-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="bg-paper-line w-[400px] h-[700px] flex flex-col">
+          <p class="text-gray-dark font-bold text-[28px] py-12 text-center">
+            第一次作戰計畫 (20)
+          </p>
+          <img
+            *ngIf="sprint.length < 2"
+            src="assets/girl.png"
+            alt="少女"
+            class="block rounded-[50%] h-[240px] mx-auto"
+          />
+          <img
+            *ngIf="sprint.length >= 2"
+            src="assets/girl-smile.png"
+            alt="少女"
+            class="block rounded-[50%] h-[240px] mx-auto"
+          />
+          <div
+            class="relative flex-1"
+            cdkDropList
+            [cdkDropListData]="sprint"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <ng-container *ngFor="let item of sprint; index as i">
+              <div
+                cdkDrag
+                *ngIf="i === 0"
+                class="memo-sm absolute top-2 left-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+              <div
+                cdkDrag
+                *ngIf="i === 1"
+                class="memo-sm absolute top-2 right-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+              <div
+                cdkDrag
+                *ngIf="i === 2"
+                class="memo-sm absolute bottom-2 left-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+              <div
+                cdkDrag
+                *ngIf="i === 3"
+                class="memo-sm absolute bottom-2 right-12"
+              >
+                {{ item.text }} ({{ item.points }})
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="btn text-[26px] -mt-8 ml-auto"
+        [ngClass]="{
+          'btn--primary hover:cursor-pointer': sprint.length >= 2,
+          'btn--disable': sprint.length < 2
+        }"
+        (click)="checkSprint()"
+      >
+        完成
+      </button>
+    </div></ng-container
+  >
 </div>
