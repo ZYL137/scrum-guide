@@ -11,6 +11,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CustomDialogComponent } from './components/custom-dialog/custom-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MeetingComponent } from './meeting/meeting.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     DialogueComponent,
     SprintComponent,
     CustomDialogComponent,
+    MeetingComponent,
   ],
   imports: [
     BrowserModule,

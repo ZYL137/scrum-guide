@@ -1,0 +1,52 @@
+.bg-living-room {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/assets/living-room.jpg");
+}
+
+.bg-bedroom {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/assets/room.jpg");
+}
+
+.bg-cafe {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/assets/cafe.jpg");
+}
+
+.meeting-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 64px 24px;
+  gap: 24px;
+
+  width: 400px;
+  height: 320px;
+
+  &-2 {
+    animation-delay: 1s;
+  }
+  &-3 {
+    animation-delay: 2s;
+  }
+}
+.meeting-card-btn {
+  animation-delay: 3s;
+}
+
+.level-3-box {
+  width: 1136px;
+  height: 577px;
+  padding: 40px 54px;
+  background: url("/assets/bg-paper.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.cdk-drag:not(.cdk-drag-preview) {
+  transform: none !important;
+}

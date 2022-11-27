@@ -1,0 +1,261 @@
+<ng-container *ngIf="counter === 0">
+  <div
+    class="bg-living-room h-full w-full flex flex-col items-center justify-end px-[60px] pb-[52px]"
+  >
+    <div class="flex">
+      <img src="assets/friend.png" alt="朋友" />
+      <img src="assets/dad.png" alt="爸爸" />
+      <img src="assets/mom.png" alt="媽媽" />
+    </div>
+    <dialogue
+      class=""
+      [title]="'旁白 '"
+      [showBtn]="true"
+      (continue)="counter = counter + 1"
+    >
+      <p>
+        爸爸、媽媽與朋友三人為了能確實掌握計畫的進度，在每天早上9:00都會聚集在客廳，花15分鐘討論昨天做的狀況、今天要努力哪些項目及有沒有遇上什麼困擾或障礙需要提出。
+      </p>
+    </dialogue>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="counter === 1">
+  <div
+    class="bg-bedroom h-full w-full flex flex-col items-center justify-end px-[60px] pb-[52px]"
+  >
+    <div class="flex">
+      <img src="assets/girl.png" alt="朋友" />
+      <img src="assets/mom.png" alt="媽媽" />
+    </div>
+    <dialogue
+      class=""
+      [title]="'旁白 '"
+      [showBtn]="true"
+      (continue)="counter = counter + 1"
+    >
+      <p>
+        Srum脫離單身大作戰第一期Sprint結果出來後，媽媽邀請少女在客廳坐下聊聊，對於第一期計畫的進展結果，小花是否有什麼意見及想法。
+      </p>
+    </dialogue>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="counter >= 2 && counter < 4">
+  <div
+    class="bg-cafe h-full w-full flex flex-col items-center justify-end px-[60px] pb-[52px]"
+  >
+    <ng-container *ngIf="counter === 2">
+      <div class="flex">
+        <img src="assets/friend.png" alt="朋友" />
+        <img src="assets/dad.png" alt="爸爸" />
+        <img src="assets/mom.png" alt="媽媽" />
+      </div>
+      <dialogue
+        class=""
+        [title]="'旁白 '"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>
+          Srum脫離單身大作戰Sprint第一期完成後，爸爸、媽媽及朋友找了間咖啡廳，認真討論起這期計畫，有哪些做得好的事可以繼續維持，或哪些部分要做改善，讓Scrum脫離單身大作戰第二期可以更順利更完美。
+        </p>
+      </dialogue></ng-container
+    >
+
+    <ng-container *ngIf="counter === 3">
+      <div class="flex items-center">
+        <img src="assets/dad.png" alt="爸爸" />
+        <a
+          href="https://www.atlassian.com/software/confluence"
+          target="_blank"
+          class="h-12 py-3 px-5 bg-white opacity-80 rounded-[100px] translate-x-80"
+        >
+          <img
+            src="assets/Confluence.png"
+            alt="Confluence logo"
+            class="h-full"
+          />
+        </a>
+      </div>
+      <dialogue
+        class=""
+        [title]="'爸爸 '"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>優化工作流程，讓團隊變得更有效率的話我都用Confluence這個工具。</p>
+      </dialogue></ng-container
+    >
+  </div>
+</ng-container>
+
+<ng-container *ngIf="counter === 4">
+  <div
+    class="bg-living-room h-full w-full flex flex-col items-center justify-end px-[60px] pb-[52px]"
+  >
+    <div class="flex-1 flex flex-col justify-center">
+      <p class="scene-title">會議介紹</p>
+      <div class="flex gap-[64px]">
+        <div class="custom-card meeting-card meeting-card-1 fade-in">
+          <p class="font-bold text-[24px] text-center">
+            每日會議<br />
+            Daily Standing Meeting
+          </p>
+          <p class="text-[18px]">
+            執行計畫期間，每天團隊成員站著花不超過15分鐘的時間，討論昨天短衝目標進度、今天如何準備完成目標及目前所遇到的問題困難
+          </p>
+        </div>
+        <div class="custom-card meeting-card meeting-card-2 fade-in">
+          <p class="font-bold text-[24px] text-center">
+            短衝檢視會議<br />
+            Sprint Review
+          </p>
+          <p class="text-[18px]">
+            在短衝結束後，檢視此次短衝的成果，並邀請利害關係人對成果提出意見回饋
+          </p>
+        </div>
+        <div class="custom-card meeting-card meeting-card-3 fade-in">
+          <p class="font-bold text-[24px] text-center">
+            短衝自省會議<br />
+            Sprint Retrospective
+          </p>
+          <p class="text-[18px]">
+            團隊成員共同回顧這次短衝發生的事情，好的部分提出來讓大家想辦法繼續維持，須改善的部分提出來共同討論解決之道，優化團隊讓計畫執行更順暢。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn--primary meeting-card-btn text-[32px] ml-auto mr-10 fade-in"
+      (click)="counter = !startLevelThree ? counter + 1 : 6"
+    >
+      下一步
+    </button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="counter === 5">
+  <div
+    class="bg-living-room h-full w-full flex flex-col items-center justify-center px-[60px] pb-[52px]"
+  >
+    <div
+      class="w-[980px] h-[370px] custom-card z-30 px-[110px] py-[80px] text-[28px] font-bold leading-normal flex flex-col gap-10 place-self-center justify-between items-center"
+    >
+      <p>那麼接下來可以請你幫忙排會議的時間軸嗎？</p>
+
+      <button
+        class="btn btn--primary text-4xl mx-auto"
+        (click)="startLevelThree()"
+      >
+        好的
+      </button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="counter === 6">
+  <div
+    class="bg-living-room h-full w-full flex flex-col items-center justify-between px-[60px] pb-[52px] pt-36"
+  >
+    <p class="scene-title">關卡 3 - 會議時間軸</p>
+    <div class="level-3-box">
+      <p class="text-[32px] font-bold">
+        請你安排一下這些會議應該出現在哪個時間點
+      </p>
+      <p class="text-[22px] font-medium text-[#575757]">
+        透過拖拉的方式將下方方塊放到對應的位置
+      </p>
+      <div class="w-full flex-1 flex flex-col justify-around relative">
+        <img
+          src="assets/timeline.png"
+          alt="時間軸"
+          class="w-full absolute top-1/2 left-0 z-0 -translate-y-[80%]"
+        />
+        <div
+          #answerList="cdkDropList"
+          cdkDropList
+          [cdkDropListConnectedTo]="meetingList"
+          [cdkDropListData]="answers"
+          (cdkDropListDropped)="drop($event)"
+          class="w-full h-full grid grid-cols-3 z-10 justify-items-center items-start"
+        >
+          <ng-container *ngFor="let item of answers; index as i">
+            <ng-container *ngIf="i === 0">
+              <div
+                cdkDrag
+                [cdkDragDisabled]="item === ''"
+                class="bg-white border border-black rounded-[16px] text-[28px] -translate-x-10 -translate-y-4"
+                [ngClass]="{
+                  'p-6 bg-[#DC7D7D] hover:cursor-grab border-0': item !== '',
+                  'w-[220px] h-[85px]': item === ''
+                }"
+              >
+                {{ item }}
+              </div></ng-container
+            >
+            <ng-container *ngIf="i === 1"
+              ><div
+                cdkDrag
+                [cdkDragDisabled]="item === ''"
+                class="bg-white border border-black rounded-[16px] text-[28px] self-center translate-y-10 ml-5"
+                [ngClass]="{
+                  'p-6 bg-[#DC7D7D] hover:cursor-grab border-0': item !== '',
+                  'w-[220px] h-[85px]': item === ''
+                }"
+              >
+                {{ item }}
+              </div></ng-container
+            >
+            <ng-container *ngIf="i === 2"
+              ><div
+                cdkDrag
+                [cdkDragDisabled]="item === ''"
+                class="bg-white border border-black rounded-[16px] text-[28px] self-center translate-y-10"
+                [ngClass]="{
+                  'p-6 bg-[#DC7D7D] hover:cursor-grab border-0': item !== '',
+                  'w-[220px] h-[85px]': item === ''
+                }"
+              >
+                {{ item }}
+              </div></ng-container
+            >
+          </ng-container>
+        </div>
+        <div
+          #meetingList="cdkDropList"
+          cdkDropList
+          cdkDropListSortingDisabled
+          [cdkDropListConnectedTo]="answerList"
+          [cdkDropListData]="meetingItems"
+          (cdkDropListDropped)="drop($event)"
+          class="z-10 mt-auto"
+        >
+          <div
+            class="w-full basis-[115px] min-h-[115px] grid grid-cols-3 justify-items-center items-center"
+          >
+            <p
+              cdkDrag
+              *ngFor="let item of meetingItems"
+              class="p-6 bg-[#DC7D7D] rounded-[28px] shadow-2xl text-[28px] hover:cursor-grab"
+            >
+              {{ item }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full flex justify-between">
+      <button class="btn btn--primary text-4xl mx-auto" (click)="counter = 4">
+        上一步
+      </button>
+      <button
+        class="btn btn--primary text-4xl mx-auto"
+        (click)="checkAnswers()"
+      >
+        好的
+      </button>
+    </div>
+  </div>
+</ng-container>

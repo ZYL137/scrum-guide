@@ -1,4 +1,3 @@
-import { Dialog } from '@angular/cdk/dialog';
 import {
   CdkDragDrop,
   moveItemInArray,

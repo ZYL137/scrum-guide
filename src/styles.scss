@@ -131,3 +131,9 @@ body {
     opacity: 1;
   }
 }
+.cdk-drag-placeholder {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+}
