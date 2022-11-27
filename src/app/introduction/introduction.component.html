@@ -185,14 +185,14 @@
       </div>
       <button
         class="btn btn--primary text-[32px] ml-auto fade-in team-btn-delay"
-        (click)="counter = counter + 1"
+        (click)="counter = enterLevelOne ? 8 : counter + 1"
       >
         下一步
       </button>
     </div>
   </ng-container>
 
-  <ng-container *ngIf="counter === 7 && !enterLevelOne">
+  <ng-container *ngIf="counter === 7">
     <div
       class="w-[980px] h-[405px] custom-card z-30 px-[110px] py-[80px] text-[28px] font-bold leading-normal flex flex-col gap-[100px] place-self-center"
     >
@@ -210,100 +210,121 @@
   <ng-container *ngIf="counter === 8">
     <div class="flex-1 h-full">
       <p class="scene-title">關卡 1 - 職務分配</p>
-      <div class="mx-auto flex flex-col level-1-box translate-y-32 pt-7 pb-10">
-        <div class="grid grid-cols-3">
-          <p
-            class="col-start-2 text-center text-[#575757] font-medium text-[22px]"
-          >
-            請幫我把人物連接到相對應的職務
-          </p>
-          <button
+      <div class="flex flex-col pt-20">
+        <div class="mx-auto flex flex-col level-1-box pt-7 pb-10">
+          <div class="grid grid-cols-3">
+            <p
+              class="col-start-2 text-center text-[#575757] font-medium text-[22px]"
+            >
+              請拖曳職務排出與人物對應的組合
+            </p>
+            <!-- <button
             class="py-2 px-4 rounded-[100px] bg-white justify-self-center shadow-custom"
           >
             Scrum Team 介紹
-          </button>
-        </div>
-        <div class="flex-1 flex mx-36 mt-12 justify-between">
-          <div class="flex flex-col basis-32 justify-between">
-            <div
-              class="flex flex-col gap-3 items-center hover:cursor-pointer"
-              (click)="getSelectedCharacter($event, 'dad')"
-            >
-              <img class="h-30 rounded-[50%]" src="assets/dad.png" alt="爸爸" />
-              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
-                爸爸
-              </p>
-            </div>
-            <div
-              class="flex flex-col gap-3 items-center hover:cursor-pointer"
-              (click)="getSelectedCharacter($event, 'mom')"
-            >
-              <img class="h-30 rounded-[50%]" src="assets/mom.png" alt="媽媽" />
-              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
-                媽媽
-              </p>
+          </button> -->
+          </div>
+          <div class="flex-1 flex mx-36 mt-12 justify-between">
+            <div class="flex flex-col basis-32 justify-between">
+              <div class="flex flex-col gap-3 items-center">
+                <img
+                  class="h-30 rounded-[50%]"
+                  src="assets/dad.png"
+                  alt="爸爸"
+                />
+                <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                  爸爸
+                </p>
+              </div>
+
+              <div class="flex flex-col gap-3 items-center">
+                <img
+                  class="h-[120px] rounded-[50%]"
+                  src="assets/friend.png"
+                  alt="朋友"
+                />
+                <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                  朋友
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 items-center">
+                <img
+                  class="h-30 rounded-[50%]"
+                  src="assets/mom.png"
+                  alt="媽媽"
+                />
+                <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                  媽媽
+                </p>
+              </div>
             </div>
 
+            <!-- <div  class="example-list" (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+            </div> -->
             <div
-              class="flex flex-col gap-3 items-center hover:cursor-pointer"
-              (click)="getSelectedCharacter($event, 'friend')"
+              cdkDropList
+              class="flex flex-col basis-44 justify-between"
+              (cdkDropListDropped)="drop($event)"
             >
-              <img
-                class="h-[120px] rounded-[50%]"
-                src="assets/friend.png"
-                alt="朋友"
-              />
-              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
-                朋友
-              </p>
+              <ng-container *ngFor="let item of roles; index as i">
+                <div
+                  cdkDrag
+                  *ngIf="item === 'po'"
+                  class="flex flex-col gap-3 items-center hover:cursor-grab"
+                >
+                  <img
+                    class="w-[80px] h-[80px]"
+                    src="assets/icon-po-gray.svg"
+                    alt="產品負責人"
+                  />
+                  <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                    產品負責人
+                    <br />(Product Owner)
+                  </p>
+                </div>
+                <div
+                  cdkDrag
+                  *ngIf="item === 'sm'"
+                  class="flex flex-col gap-3 items-center hover:cursor-grab"
+                >
+                  <img
+                    class="w-[80px] h-[80px]"
+                    src="assets/icon-sm-gray.svg"
+                    alt="Scrum 大師"
+                  />
+                  <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                    Scrum 大師
+                    <br />(Scrum Master)
+                  </p>
+                </div>
+                <div
+                  cdkDrag
+                  *ngIf="item === 'team'"
+                  class="flex flex-col gap-3 items-center hover:cursor-grab"
+                >
+                  <img
+                    class="w-[80px] h-[80px]"
+                    src="assets/icon-sm-gray.svg"
+                    alt="開發團隊"
+                  />
+                  <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
+                    開發團隊
+                    <br />
+                    (Developer)
+                  </p>
+                </div></ng-container
+              >
             </div>
           </div>
-          <canvas #canvas class="flex-1"></canvas>
-          <div class="flex flex-col basis-44 justify-between">
-            <div
-              class="flex flex-col gap-3 items-center hover:cursor-pointer"
-              (click)="getSelectedTeamRole($event, 'po')"
-            >
-              <img
-                class="w-[80px] h-[80px]"
-                src="assets/icon-po-gray.svg"
-                alt="產品負責人"
-              />
-              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
-                產品負責人
-                <br />(Product Owner)
-              </p>
-            </div>
-            <div
-              class="flex flex-col gap-3 items-center hover:cursor-pointer"
-              (click)="getSelectedTeamRole($event, 'sm')"
-            >
-              <img
-                class="w-[80px] h-[80px]"
-                src="assets/icon-sm-gray.svg"
-                alt="Scrum 大師"
-              />
-              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
-                Scrum 大師
-                <br />(Scrum Master)
-              </p>
-            </div>
-            <div
-              class="flex flex-col gap-3 items-center hover:cursor-pointer"
-              (click)="getSelectedTeamRole($event, 'team')"
-            >
-              <img
-                class="w-[80px] h-[80px]"
-                src="assets/icon-sm-gray.svg"
-                alt="開發團隊"
-              />
-              <p class="font-medium text-[22px] text-[#1D1D1D] text-center">
-                開發團隊
-                <br />
-                (Developer)
-              </p>
-            </div>
-          </div>
+        </div>
+        <div class="w-full flex justify-between -mt-5">
+          <button class="btn btn--yellow text-[32px]" (click)="counter = 6">
+            上一步
+          </button>
+          <button class="btn btn--primary text-[32px]" (click)="checkAnswer()">
+            完成
+          </button>
         </div>
       </div>
     </div>

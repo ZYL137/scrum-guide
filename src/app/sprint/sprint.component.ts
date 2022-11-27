@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sprint.component.scss'],
 })
 export class SprintComponent implements OnInit {
-  counter = 11;
+  counter = 0;
   constructor(private dialog: MatDialog, private router: Router) {}
 
   ngOnInit(): void {}

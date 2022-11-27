@@ -14,7 +14,7 @@ import { CustomDialogComponent } from '../components/custom-dialog/custom-dialog
   styleUrls: ['./meeting.component.scss'],
 })
 export class MeetingComponent {
-  counter = 6;
+  counter = 0;
 
   isLevelThree = false;
   meetingItems = ['短衝檢視會議', '每日站立會議', '短衝自省會議'];
@@ -28,6 +28,9 @@ export class MeetingComponent {
   }
 
   drop(event: CdkDragDrop<string[]>) {
+    // if (event.container.data.length >= 3) {
+    //   event.container.data.pop();
+    // }
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data,
@@ -35,10 +38,6 @@ export class MeetingComponent {
         event.currentIndex
       );
     } else {
-      if (event.container.data.length >= 3) {
-        event.container.data.pop();
-      }
-
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
@@ -69,7 +68,13 @@ export class MeetingComponent {
       });
       dialogRef
         .afterClosed()
-        .subscribe(() => this.router.navigateByUrl('/meeting'));
+        .subscribe(() => this.router.navigateByUrl('/reteospective'));
     }
+  }
+
+  resetDragList(): void {
+    this.counter = 4;
+    this.meetingItems = ['短衝檢視會議', '每日站立會議', '短衝自省會議'];
+    this.answers = ['', '', ''];
   }
 }

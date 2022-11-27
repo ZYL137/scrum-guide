@@ -12,6 +12,9 @@ import { CustomDialogComponent } from './components/custom-dialog/custom-dialog.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MeetingComponent } from './meeting/meeting.component';
+import { ReteospectiveComponent } from './reteospective/reteospective.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { MeetingComponent } from './meeting/meeting.component';
     SprintComponent,
     CustomDialogComponent,
     MeetingComponent,
+    ReteospectiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,8 @@ import { MeetingComponent } from './meeting/meeting.component';
     DragDropModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatRadioModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

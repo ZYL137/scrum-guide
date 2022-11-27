@@ -1,0 +1,112 @@
+<ng-container *ngIf="counter >= 0 && counter < 2">
+  <div
+    class="bg-living-room h-full w-full flex flex-col items-center justify-end px-[60px] pb-[52px]"
+  >
+    <ng-container *ngIf="counter < 1">
+      <dialogue
+        class=""
+        [title]="'旁白 '"
+        [showBtn]="true"
+        (continue)="counter = counter + 1"
+      >
+        <p>了解會議內容後，爸爸身為 Scrum 大師想再提醒大家一點。</p>
+      </dialogue></ng-container
+    >
+    <ng-container *ngIf="counter >= 1">
+      <p class="scene-title">會議介紹</p>
+
+      <div class="flex items-start justify-around">
+        <img src="assets/dad.png" alt="爸爸" class="ml-4" />
+        <p
+          class="text-[22px] font-medium rounded-card px-6 py-4 bg-white opacity-90"
+        >
+          在Sprint Reteospective中非常重要的一點是，大家都要使用<span
+            class="text-[#DC7D7D]"
+            >『正面表述』</span
+          >
+          來給回饋喔
+        </p>
+      </div>
+      <dialogue class="" [title]="'爸爸 '" (continue)="counter = counter + 1">
+        <p class="mb-6">這期計畫中有哪些需要改進的部分呢？</p>
+        <mat-radio-group class="flex flex-col" [(ngModel)]="answer">
+          <mat-radio-button class="" [value]="'correct'"
+            >有遇到問題要第一時間在每日會議中提出喔，大家可以共同討論解決方法</mat-radio-button
+          >
+          <mat-radio-button class="" [value]="'wrong'"
+            >遇到問題不要都不講，這樣大家怎麼知道你要幫忙</mat-radio-button
+          >
+        </mat-radio-group>
+        <button
+          class="btn self-end -translate-y-5"
+          [ngClass]="{
+            'btn--primary': answer !== '',
+            'btn--disable': answer === ''
+          }"
+          (click)="checkAnswer()"
+        >
+          完成
+        </button>
+      </dialogue></ng-container
+    >
+  </div>
+</ng-container>
+
+<ng-container *ngIf="counter === 2">
+  <div class="bg-blur h-full w-full"></div>
+  <div
+    class="h-full w-full flex flex-col items-center justify-between pt-10 px-[60px] pb-[52px] z-30 absolute top-0 left-0"
+  >
+    <div class="w-[750px] h-[490px] py-4 px-6 bg-white">
+      <img src="assets/family.png" alt="圖片" class="h-full" />
+    </div>
+    <dialogue [title]="'旁白 '" (continue)="counter = counter + 1">
+      <p>
+        感謝各位的協助，在大家的努力不懈下，Scrum脫離單身大作戰第一期順利結束，第一期的進展結果是，小美成功和喜歡的曖昧對象出去約會啦！！！
+      </p>
+      <div class="grid grid-cols-3">
+        <button
+          class="btn bg-[#FFF1F1] mx-auto col-start-2"
+          (click)="openDialog()"
+        >
+          Scrum名詞對照表
+        </button>
+        <button
+          class="btn btn--primary mx-auto justify-self-end -mr-10 text-[28px]"
+          (click)="counter = counter + 1"
+        >
+          下一步
+        </button>
+      </div>
+    </dialogue>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="counter === 3">
+  <div class="bg-ending h-full w-full flex flex-col items-center justify-end">
+    <div class="flex flex-col gap-8 items-center">
+      <p class="text-xl">
+        後續爸爸、媽媽及朋友這個最強幫脫單團體也會繼續努力，達成他們的最終目標，那就是有一天小美能夠順利交到她夢寐以求的男朋友～
+      </p>
+      <p class="font-bold text-[36px]">To be countiue...</p>
+    </div>
+    <div class="h-[440px] w-full flex justify-between items-end">
+      <img src="assets/girl-smile.png" alt="圖片" class="rotate-horizontal" />
+      <a [routerLink]="['/']" class="btn btn--primary mb-14 text-[36px]"
+        >重新遊戲</a
+      >
+      <img src="assets/boy.png" alt="圖片" />
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #dialog>
+  <div
+    class="flex flex-col w-[890px] gap-5 items-center justify-center relative"
+  >
+    <img src="assets/review.png" alt="Scrum名詞對照表" class="w-full-width" />
+    <!-- <p class="text-black text-[22px] font-medium text-center absolute bottom-0">
+      點擊畫面任一處即可關閉
+    </p> -->
+  </div>
+</ng-template>

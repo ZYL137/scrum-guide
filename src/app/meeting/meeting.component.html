@@ -181,7 +181,7 @@
           (cdkDropListDropped)="drop($event)"
           class="w-full h-full grid grid-cols-3 z-10 justify-items-center items-start"
         >
-          <ng-container *ngFor="let item of answers; index as i">
+          <ng-container *ngFor="let item of answers | slice: 0:3; index as i">
             <ng-container *ngIf="i === 0">
               <div
                 cdkDrag
@@ -247,7 +247,10 @@
       </div>
     </div>
     <div class="w-full flex justify-between">
-      <button class="btn btn--primary text-4xl mx-auto" (click)="counter = 4">
+      <button
+        class="btn btn--primary text-4xl mx-auto"
+        (click)="resetDragList()"
+      >
         上一步
       </button>
       <button

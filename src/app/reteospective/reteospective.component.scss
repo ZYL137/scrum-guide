@@ -1,0 +1,21 @@
+.bg-living-room {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/assets/living-room.jpg");
+}
+
+.bg-blur {
+  background: url("/assets/living-room.jpg");
+  filter: blur(8px);
+}
+
+.bg-ending {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("/assets/tree.jpg");
+  background-size: cover;
+}
+.rotate-horizontal {
+  transform: rotateY(180deg);
+}
