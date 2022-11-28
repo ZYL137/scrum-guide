@@ -1,16 +1,16 @@
 .bg-living-room {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/assets/living-room.jpg");
+    url("~src/assets/living-room.jpg");
 }
 
 .bg-bedroom {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/assets/room.jpg");
+    url("~src/assets/room.jpg");
 }
 
 .bg-cafe {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/assets/cafe.jpg");
+    url("~src/assets/cafe.jpg");
 }
 
 .meeting-card {
@@ -39,7 +39,7 @@
   width: 1136px;
   height: 577px;
   padding: 40px 54px;
-  background: url("/assets/bg-paper.png");
+  background: url("~src/assets/bg-paper.png");
   display: flex;
   flex-direction: column;
   justify-content: center;

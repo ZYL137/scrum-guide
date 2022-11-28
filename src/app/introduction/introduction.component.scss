@@ -1,6 +1,6 @@
 .bg-container {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/assets/living-room.jpg");
+    url("~src/assets/living-room.jpg");
 }
 
 .line-2 {
@@ -64,7 +64,7 @@
   width: 1160px;
   height: 720px;
 
-  background-image: url("/assets/bg-paper.png");
+  background-image: url("/~src/assets/bg-paper.png");
   // background-attachment: fixed;
   background-size: cover;
 }
