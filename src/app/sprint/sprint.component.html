@@ -1,7 +1,7 @@
 <div class="bg-container h-full w-full flex justify-center px-[60px] pb-[52px]">
   <ng-container *ngIf="counter === 0">
     <div class="flex flex-col justify-end">
-      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <img class="w-[520px] mx-auto" src="/assets/dad.png" alt="爸爸" />
       <dialogue
         class=""
         [title]="'爸爸'"
@@ -19,7 +19,7 @@
 
   <ng-container *ngIf="counter > 0 && counter < 3">
     <div class="flex flex-col justify-end fade-in relative">
-      <img class="w-[520px] mx-auto" src="assets/mom.png" alt="媽媽" />
+      <img class="w-[520px] mx-auto" src="/assets/mom.png" alt="媽媽" />
       <dialogue
         class=""
         [title]="'媽媽'"
@@ -59,9 +59,9 @@
   <ng-container *ngIf="counter === 4">
     <div class="h-full w-full flex flex-col items-center justify-end">
       <div class="flex">
-        <img src="assets/mom.png" alt="媽媽" class="opacity-70" />
-        <img src="assets/dad.png" alt="爸爸" class="opacity-70 -mx-40 z-10" />
-        <img src="assets/friend.png" alt="朋友" class="opacity-70 z-20" />
+        <img src="/assets/mom.png" alt="媽媽" class="opacity-70" />
+        <img src="/assets/dad.png" alt="爸爸" class="opacity-70 -mx-40 z-10" />
+        <img src="/assets/friend.png" alt="朋友" class="opacity-70 z-20" />
       </div>
       <dialogue
         class=""
@@ -139,7 +139,7 @@
 
   <ng-container *ngIf="counter === 7">
     <div class="flex flex-col justify-end">
-      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <img class="w-[520px] mx-auto" src="/assets/dad.png" alt="爸爸" />
       <dialogue
         class=""
         [title]="'爸爸'"
@@ -157,7 +157,7 @@
 
   <ng-container *ngIf="counter === 8">
     <div class="flex flex-col justify-end">
-      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <img class="w-[520px] mx-auto" src="/assets/dad.png" alt="爸爸" />
       <dialogue
         class=""
         [title]="'爸爸'"
@@ -173,7 +173,7 @@
 
   <ng-container *ngIf="counter === 9">
     <div class="flex flex-col justify-end">
-      <img class="w-[520px] mx-auto" src="assets/dad.png" alt="爸爸" />
+      <img class="w-[520px] mx-auto" src="/assets/dad.png" alt="爸爸" />
       <dialogue
         class=""
         [title]="'爸爸'"
@@ -211,7 +211,7 @@
         target="_blank"
         class="w-[124px] h-14 p-3 bg-white opacity-80 rounded-[100px] ml-auto mt-10"
       >
-        <img src="assets/icon-jira.png" alt="Jira logo" class="w-full" />
+        <img src="/assets/icon-jira.png" alt="Jira logo" class="w-full" />
       </a>
       <p class="text-white font-medium text-[22px] text-center -mt-8 mb-6">
         請把第一次作戰要做的事項從清單上撕下給少女，記住！因為時間有限，第一次只能完成約20點的事項
@@ -266,13 +266,13 @@
           </p>
           <img
             *ngIf="sprint.length < 2"
-            src="assets/girl.png"
+            src="/assets/girl.png"
             alt="少女"
             class="block rounded-[50%] h-[240px] mx-auto"
           />
           <img
             *ngIf="sprint.length >= 2"
-            src="assets/girl-smile.png"
+            src="/assets/girl-smile.png"
             alt="少女"
             class="block rounded-[50%] h-[240px] mx-auto"
           />
